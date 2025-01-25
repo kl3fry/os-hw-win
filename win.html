@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Windows 10 Instalācija</title>
+  <style>
+    /* Default pandoc style with minor tweaks */
+    @import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,300);
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+      font-family: "Merriweather";
+      line-height: 2em;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 55em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: monospace;
+      font-size: 100%;
+      margin: 0;
+      hyphens: manual;
+      background-color: #ececec;
+      padding: 0.1em 0.5em;
+      border: 0.1em solid white;
+      border-radius: 0.5em;
+      text-align: center;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="windows-10-instalācija">Windows 10 instalācija</h1>
+<h5 id="autors-arvīds-bākulis">Autors: Arvīds Bākulis</h5>
+<h5 id="studenta-apliecības-nummurs-ab24166">Studenta apliecības
+nummurs: ab24166</h5>
+<h2 id="ievads">Ievads</h2>
+<p>Šajā darbā es instalēšu <strong>Windows 10</strong> un konfigurēšu
+to.</p>
+<p>Markdown avota failus, konfigurācijas failus un visu pārējo varēs
+atrast darba <a href="https://github.com/kl3fry/os-hw-win/">Github
+repozitorijā</a></p>
+<h3 id="kāpēc-tieši-windows-10">Kāpēc tieši Windows 10?</h3>
+<ul>
+<li>10 ir vēl lietojama mūsdienu scenārijos.</li>
+<li>Satur mazāk (bet vienalga daudz) spiegprogrammatūras un lietotāja
+brīvību ierobežojošo “inovāciju”, kas satiekamas Windows 11.</li>
+</ul>
+<h3 id="sistēma-instalācijai">Sistēma instalācijai:</h3>
+<ul>
+<li><strong>QEMU/KVM</strong> virtuālā mašīna ar
+<strong>libvirt</strong> un <strong>VirtManager</strong> frontend-u.
+<ul>
+<li>Virtuālai mašīnai tiks atvēlēta sava fiziskā grafikas karte
+<strong>RX 6700 XT</strong>*.</li>
+<li>Video kartei ir pieslēgts savs monitors tāpēc tāds būs ari virtuālai
+mašīnai.</li>
+<li>Perefērijas ierīces (pele, klaviatūra) virtuālai mašīnai pieslēgtas
+kā <strong>evdev</strong> ierīces lai tās viegli varētu pārslēgt starp
+<strong>host</strong>** un <strong>guest</strong>** sistēmām.</li>
+</ul></li>
+</ul>
+<h6
+id="vairāk-par-gpu-passthrough-httpswiki.archlinux.orgtitlepci_passthrough_via_ovmf-httpswiki.archlinux.orgtitleqemuguest_graphics_acceleration">*
+Vairāk par GPU passthrough:
+https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF
+https://wiki.archlinux.org/title/QEMU/Guest_graphics_acceleration</h6>
+<h6
+id="host---fiziskās-mašīnas-instalētā-sistēma-guest---virtuālā-mašīnā-instalētā-sistēma">**
+host - fiziskās mašīnas instalētā sistēma; guest - virtuālā mašīnā
+instalētā sistēma</h6>
+<h3 id="par-instalāciju">Par instalāciju:</h3>
+<ul>
+<li>Instalēšu <strong>Windows 10</strong> un konfigurēšu to tā, ja man
+pašam nāktos to izmantot (nedod dievs)</li>
+<li>Izdzēsīšu un/vai izslēgšu vismaz daļu no Microsoft iepriekš
+instalētās spiegprogrammatūras</li>
+<li>Instalēšu nepieciešamos draiverus</li>
+<li>Instalēšu visas nepieciešamās un vēlamās programmas</li>
+<li>Instalēšu un pārādīšu kādu spēli</li>
+</ul>
+<h2 id="virtuālās-mašīnas-konfigurācija-un-izveide">Virtuālās mašīnas
+konfigurācija un izveide</h2>
+<ul>
+<li>Lejupielādēju instalācijas vides <code>.iso</code> attēlu no
+oficiālās mājaslapas:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/host/win10site.png" /></p>
+<ul>
+<li>Lejupielādēju <strong>Windows 10 English International</strong> un
+varu sākt izveidot virtuālo mašīnu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/host/vm-iso.png" /></p>
+<ul>
+<li>Atvēlu tai <strong>8GB</strong> atmiņas, un <strong>128GB</strong>
+krātuves kā arī visus savus procesora kodolus:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/host/vm-ram.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/host/vm-drive.png" /></p>
+<ul>
+<li>Katram gadījumam uzstādu precīzu CPU topoloģiju:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/host/vm-top.png" /></p>
+<ul>
+<li>Pievienoju host failu sistēmas caurlaidi lai starp host un guest
+sistēmām viegli pārvietot failus:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/host/vm-fs.png" /></p>
+<ul>
+<li>Failu sistēmas caurlaidei ir nepiecišams ieslēgt
+<code>shared memory</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/host/vm-ram2.png" /></p>
+<ul>
+<li>Kā arī pievinoju tai host klaviatūru un peli kā <code>evdev</code>
+ierīces iai tās varētu viegli pārslēgt starp host un guest sistēmām
+(strādā ka virtuāls KVM slēdzis):</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/host/vm-evdev.png" /></p>
+<ul>
+<li>Tagad var spiest <code>Begin Installation</code> sākt
+instalāciju!</li>
+</ul>
+<h2 id="instalācija">Instalācija</h2>
+<ul>
+<li><p>Nedaudz pagaidu un instalācijas vide ir ielādējusies:</p></li>
+<li><p><code>Time and currency format</code> izvēlnē izvēlos
+<code>English (World)</code>, jo tad sistēmā būs mazāk reklāmas. Un
+spiežu <code>Next</code>:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/start.png" /></p>
+<ul>
+<li>Šajā logā spiežu <code>I don't have a product key</code>, jo
+Microsoft tā pat nopelnīs vairāk nekā pietiekams, pārdodot un izmantojot
+manu un citu cilvēku informāciju 🙃:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/key.png" /></p>
+<ul>
+<li>Versiju izvēlē izvēlos <code>Windows 10 Pro</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/version.png" /></p>
+<ul>
+<li>Ļoti rūpīgi izlasu licences noteikumus un spiežu
+<code>I accept the licence terms</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/eula.png" /></p>
+<ul>
+<li>Instalācijas tipa izvēlnē izvēlos <code>Custom</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/install-type.png" /></p>
+<ul>
+<li>Diska sadalīšanā neko nemainu un vienkārši spiežu <code>Next</code>,
+jo disks ir tīrs un citas sadaļas man nav vajadzīgas:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/partition.png" /></p>
+<ul>
+<li>Tagad gaidu kamēr sistēma instalējas:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/wait.png" /></p>
+<ul>
+<li><p>Nedaudz pagaidu, virtuālā māšīna pārstartējas, un tagad man dod
+izvēlēties reģionu. Izvēlos Latviju: / <img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/region.png" /></p></li>
+<li><p>Kā klaviatūras izkārtojumu izvēlos <code>US</code>, pārējo
+pievienošu vēlāk:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/layout.png" /></p>
+<ul>
+<li>Izvēlnē ar papildus izkārtojumiem spiežu <code>Skip</code> un tagad
+atkal nedaduz pagaidu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/wait2.png" /></p>
+<ul>
+<li>Izvēlos iestatīt sistēmu kā personālo:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/personal.png" /></p>
+<ul>
+<li>Nākamajā logā izvēlos <code>Offline account</code> lai nesaistītu šo
+instālāciju ar online Microsoft kontu. Šāda iespēja nav tik viegli
+pieejama Windows 11:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/account.png" /></p>
+<ul>
+<li>Microsoft negrib lai es tik viegli atsakos no viņu konta, bet es
+atkal spiežu <code>Limited experience</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/account2.png" /></p>
+<ul>
+<li>Ievadu sava lietotāja vārdu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/user.png" /></p>
+<ul>
+<li>Izveidoju lietotājam ļoti drošu paroli no 3 cipariem un atkārtoju
+to:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/pass.png" /></p>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/pass2.png" /></p>
+<ul>
+<li>Ar trim cipariem atbildu arī uz 3 jautājumiem, kurus man jautās ja
+tos 3 ciparus aizmirsīšu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/questions.png" /></p>
+<ul>
+<li>Naivie Microsoft domā ka es izmantošu viņu pārlūku un piedāvā man
+importēt savus datus. Atsakos:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/edge-import.png" /></p>
+<ul>
+<li>Tagad Microsoft prasa atļauju mani izspiegot. Atsakos no visiem,
+bet, protams, viņi to tāpat darīs 🙃:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/spy.png" /></p>
+<ul>
+<li>Te man prasa kam es lietošu šo sistēmu lai savāk vēl vairāk
+infromācijas par mani un, kā tur teikts, dot man “personalizētus
+padomus, reklāmas un ieteikumus”. Es pats tikšu galā, padomi man nav
+vajadzīgi, tāpēc vienkārši spiežu <code>Skip</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/what.png" /></p>
+<ul>
+<li>Vēl nedaudz pagaidu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/hi.png" /></p>
+<ul>
+<li>Un sistēma ir instalēta:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/install/fin.png" /></p>
+<h2 id="programu-instalēšana-un-sistēmas-konfigurēšana">Programu
+instalēšana un sistēmas konfigurēšana</h2>
+<h3
+id="sākumam-instalēšu-winfsp-un-virtio-win-dravierus-lai-failu-sistēmas-caurlaide-strādātu-un-būtu-iespēja-tai-piekļūt-no-guest-sistēmas.">Sākumam
+instalēšu <strong>WinFSP</strong> un <strong>virtio-win</strong>
+dravierus lai failu sistēmas caurlaide strādātu un būtu iespēja tai
+piekļūt no guest sistēmas.</h3>
+<ul>
+<li>Lejupielādēju <strong>WinFSP</strong> instalētāju un instalēju
+to:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/winfsp-web.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/winfsp-web2.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/winfsp-inst.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/winfsp-inst2.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/winfsp-inst-fin.png" /></p>
+<ul>
+<li><p>Un lejupielādēju <strong>virtio-win</strong> instalētāju no
+github lapas un instalēju to:</p></li>
+<li><p>Edge pārlūkam nepatīk draivera fails, tāpēc spiežu
+<code>Keep</code>:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/virtio-github-keep.png" /></p>
+<ul>
+<li>Vēljoprojām nepatīk, tāpēc atkal spiežu
+<code>Keep anyway</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/virtio-github-keep2.png" /></p>
+<ul>
+<li>Tagad <strong>SmartScreen</strong> sāk sūdzēties… Spiežu
+<code>More info</code> un pēc tam <code>Run anyway</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/virtio-install-not-so-smart-screen.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/virtio-install-not-so-smart-screen2.png" /></p>
+<blockquote>
+<p>Starp citu ir ļoti forši ka operētājsistēma neklausa lietotāju un
+nedod man uzreiz izdarīt ko es gribu 🙃.</p>
+</blockquote>
+<ul>
+<li>Beidzot instalācija ir sākusies:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/virtio-win-inst.png" /></p>
+<ul>
+<li>Nekur neko nemainu un vienkārši spiežu <code>Next</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/virtio-win-inst2.png" /></p>
+<ul>
+<li>Un instalēcija ir beigusies:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/virtio-win-inst3.png" /></p>
+<ul>
+<li>Tagad ir jāieslēdz <code>VirtIO-FS Service</code> serviss. Priekš
+tam atveru <strong>Services</strong> un atrodu nepieciešamo:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/virtio-fs-service.png" /></p>
+<ul>
+<li>Spiežu tam virsū un atvērtajā logā nomainu <code>Startup type</code>
+uz <code>Automatic</code> lai serviss startētu kopā ar sistēmu un
+piespiežu <code>Start</code> lai to uzreiz ieslēgt nepārstartējot
+mašīnu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/virtio-fs-service2.png" /></p>
+<ul>
+<li>Atveru vaļā failu pārlūku un redzu, ka caurlaistā failu sistēma ir
+pieejama:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/fs/virtio-fin.png" /></p>
+<h3
+id="tagad-pārstartēšu-virtuālo-mašīnu-pieslēdzot-tai-fizisko-video-karti.">Tagad
+pārstartēšu virtuālo mašīnu, pieslēdzot tai fizisko video karti.</h3>
+<ul>
+<li>Pieslēdzu karti virtuālai mašīnai:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/host/passthrough.png" /></p>
+<ul>
+<li>Startēju mašīnu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/passthrough/passthrough-start.png" /></p>
+<ul>
+<li>Un kamēr es pievienoju iepriekšējo attēlu darbam Windows atrada
+draiverus manai kartei:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/passthrough/passthrough-found.png" /></p>
+<h3 id="tagad-nedaudz-konfigurēšu-sistēmu-un-to-izskatu.">Tagad nedaudz
+konfigurēšu sistēmu un to izskatu.</h3>
+<ul>
+<li>Vispirms izdzēšu nevajadzīgās saitnes no darbvirsmas un uzdevumu
+joslas, bet izrādās, ka <code>Learn about this picture</code> pat nevar
+izdzēst… Tāpēc to izlaižu (Arī Teams pogai piespiežu ar labo peles pogu
+un izvēlos <code>Hide</code> lai to slēptu, bet to izdarīju vēlāk):</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/clean.png" /></p>
+<ul>
+<li>Tālāk es dodos iestatījumos lai konfigurēt uzdevumu joslu, bet
+izrādās, ka Microsoft grib lai es tiem vispirms samaksātu… Tadu plānu
+man nav tāpēc pagaidām šo izlaižu 🙃:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/greedy.png" /></p>
+<ul>
+<li>Tajā vietā uzlieku foršu fona attēlu uzpiežot uz to ar labo peles
+pogu un izvēloties <code>Set as desktop background</code>. Kaitinošā
+ikona, starp citu, pazuda:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/bg.png" /></p>
+<h3 id="chris-titus-techs-windows-utility">Chris Titus Tech’s Windows
+Utility</h3>
+<p>Eksistē tāda jauka utilīta, kas piedāvā dažādus sīkākus uzlabojumus,
+liekās un spiegošanas programmatūras izdzēsšanu priekš svaigām Windows
+instalācijām.</p>
+<p>Pēc autora vārdiem (mašīntulkošana):</p>
+<blockquote>
+<p>Šī utilīta ir Windows uzdevumu apkopojums, ko veicu katrā izmantotajā
+Windows sistēmā. Tas ir paredzēts, lai racionalizētu instalēšanu, veiktu
+uzlabojumus, novērstu problēmas ar konfigurāciju un labotu Windows
+atjauninājumus…</p>
+</blockquote>
+<p>Es to izmantošu šajā instalācijā.</p>
+<p>To Github lapu var apskatīties <a
+href="https://github.com/ChrisTitusTech/winutil">šeit</a></p>
+<ul>
+<li>Lai startētu šo programmu <strong>Powershell</strong> terminālī ir
+jāieraksta sekojošā komanda:
+<ul>
+<li><code>irm "https://christitus.com/win" | iex</code></li>
+</ul></li>
+<li>Sākumā atveru <strong>Powershell</strong> ar administrātora
+tiesībām:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/winutil-shell.png" /></p>
+<ul>
+<li>Ievadu iepriekš minēto komandu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/winutil-shell-enter.png" /></p>
+<ul>
+<li>Nedaudz pagaidu un atveras šāds logs:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/winutil.png" /></p>
+<ul>
+<li>Sākšu ar <code>Tweaks</code> sadaļu. Tajā izvēlos šadus parametrus
+un spiežu <code>Run Tweaks</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/winutil-tweaks.png" /></p>
+<ul>
+<li><p>Pastāstīšu par galveniem no tiem:</p></li>
+<li><p>Atjauninājumi</p></li>
+<li><p>Demonstrēt programmu - rezidentu sarakstu.</p></li>
+<li><p>Palaist diska defragmentāciju vai optimizāciju.</p></li>
+<li><p>Pievienot Windows vismaz 2 valodas : latviešu un vēl kādu citu.
+Uzrakstīt kaut kādu īsu tekstu, lietojot 3 valodas.</p></li>
+<li><p>Demonstrēt, ka visi draiveri ir uzinstalēti. Parādīt logu ar
+aparatūras sarakstu.</p></li>
+<li><p>Startēt OS Windows “Safe mode” režīmā.</p></li>
+<li><p>Mainīt “Pagefile” konfigurāciju. Atslēgt to, vai uztaisīt
+lielāku.</p>
+<ul>
+<li><code>Delete Temporary Files</code> - džēš pagaidu failus</li>
+<li><code>Disable Telemetry</code> - izslēdz daudzas spiegošanas
+funkcijas</li>
+<li><code>Disable Location Tracking</code> - izslēdz atrašanās vietas
+izsekošana</li>
+<li><code>Enable End Task With Right Click</code> - uzkilksšinot ar labo
+peles pogu uz kādu programmu uzdevumu joslā būs iespēja beigt tā
+procesu</li>
+<li><code>Set Services to Manual</code> - izslēdz daudzus bezjēdzīgi
+ieslēgtus servisus</li>
+<li><code>Remove Microsoft Edge</code> - izdzēš <strong>Edge</strong>
+pārlūku</li>
+<li><code>Remove OneDrive</code> - izdēš OneDrive integrāciju</li>
+<li><code>Show Hidden Files</code> - padara slēpros failus redzamus</li>
+<li><code>Show File Extensions</code> - padara faila paplašinājumus
+redzamus</li>
+<li><code>Dark Theme for Windows</code> - ieslēdz tumšo interfeisu</li>
+</ul></li>
+<li><p>Neaizmirstu piespiezt <code>Run OO Shutup 10</code> - programma
+kas sniedz vēl vairāk sīku uzlabojumu un ļauj izdzēst/izslēgt vēl vairāk
+telemetrijas un spiegošanas programmatūras:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/oo.png" /></p>
+<ul>
+<li>Lai būtu vienkāršāk un pašam nav jāizvēlas parametri -
+<code>Actions</code> sadaļā spiežu
+<code>Apply only recommended settings</code> lai pielietotu tikai
+rekomendētos iestatījumus.</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/oo-rec.png" /></p>
+<ul>
+<li>Gatavs:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/oo-fin.png" /></p>
+<ul>
+<li>Tagad aizveru <strong>OO Shutup 10</strong> un pāreju
+<strong>winutil</strong> <code>Install</code> sadaļā. Šeit izvēlos tikai
+<code>LibreWolf</code>, jo Edge es izvēlējos izdzēst un man ir vajadzīgs
+pārlūks, pārējo instalēšu pats. Spiežu
+<code>Install/Upgrade Selected</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/winutil-install.png" /></p>
+<ul>
+<li>Nedaudz pagaidu un ir gatavs:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/winutil-install-fin.png" /></p>
+<h3
+id="nedaudz-gribu-pateikt-par-pārlūkprogrammu-ko-tikko-instalēju---librewolf.">Nedaudz
+gribu pateikt par pārlūkprogrammu, ko tikko instalēju - LibreWolf.</h3>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/LibreWolf_icon.svg" /></p>
+<p><strong>LibreWolf</strong> ir mans mīļākais pārluks ko es pats katru
+dienu lietoju kā galveno visās savās sistēmās. Tas ir privātumam
+veltīts, balstīts uz Mozilla Firefox un izveidots, lai nodrošinātu
+drošāku un privātāku pārlūkošanu, noņemot telemetriju un iekļaujot
+privātuma uzlabošanas funkcijas pēc noklusējuma.</p>
+<h4 id="galvenie-aspekti">Galvenie aspekti:</h4>
+<ul>
+<li><strong>LibreWolf</strong> noņem Firefox telemetriju, tāpēc tas
+nesūta datus atpakaļ uz Mozilla vai citām trešajām pusēm.</li>
+<li>Izslēdz funkcijas, kas var apdraudēt lietotāja privātumu, piemēram,
+WebRTC (lai novērstu IP noplūdes).</li>
+<li>Iekļauj <strong>uBlock Origin</strong> kā reklāmas un tās
+telemetrijas bloķētāju.</li>
+<li>Lai gan pēc noklusējuma tas ir orientēts uz privātumu, lietotāji
+joprojām var to pielāgot savām vajadzībām.</li>
+<li>Atšķirībā no Firefox, <strong>LibreWolf</strong> ir neatkarīgs no
+Mozilla un to uztur privātumu cienoši izstrādātāji.</li>
+</ul>
+<p>Pilnu iezīmju sarakstu var apskatīties <a
+href="https://librewolf.net/docs/features/">šeit</a></p>
+<h3 id="tagad-instalēšu-pakotņu-pārvaldnieku---scoop.">Tagad instalēšu
+pakotņu pārvaldnieku - Scoop.</h3>
+<p>Es nāku no GNU/Linux lietu puses, kur tiek izmantoti pakotņu
+pārvaldnieki programmu un citu pakotņu instalācijai, nevis dodties uz
+katras programmas mājaslapu atsevišķi un lejupielādēt speciālu
+“instalētāju”. Uzskatu, ka šī metode kopumā ir labāka, tāpēc es
+izvēlēšos to izmantot šeit. Dažas no šādas pieejas priekšrocībām:</p>
+<ul>
+<li><p><strong>Ērtība</strong> - Pakešu pārvaldnieki vienkāršo
+instalēšanas procesu, apstrādājot atkarības un automātiski
+lejupielādējot nepieciešamos failus. Lietotājiem ir jāpalaiž tikai viena
+komanda.</p></li>
+<li><p><strong>Atkarību pārvaldība</strong> - Daudzu programmu darbībai
+ir nepieciešamas citas bibliotēkas vai programmas. Pakotņu pārvaldnieki
+automātiski atrisina un instalē šīs atkarības, novēršot trūkstošo
+komponentu kļūdas.</p></li>
+<li><p><strong>Atjauninājumi un apkope</strong> - Izmantojot pakotņu
+pārvaldnieku, lietotāji var viegli atjaunināt visas vai tikai dažas
+programmas vai bibliotēkas, izmantojot vienu komandu.</p></li>
+<li><p><strong>Drošība</strong> - Pakotņu pārvaldnieki lejupielādē
+programmatūru no uzticamiem repozitorijiem.</p></li>
+<li><p><strong>Versiju kontrole</strong> - Tie ļauj instalēt noteiktas
+versijas, kas ir ļoti svarīgi saderības vai testēšanas nolūkos.</p></li>
+</ul>
+<p>Kā pakotņū pārvaldnieku izvēlējos <strong>Scoop</strong>, jo tas ir
+FOSS un instalē programmas tīrā, izolētā vidē, kas ļauj izvairīties no
+sistēmas līmeņa izmaiņām.</p>
+<ul>
+<li><p>Lai to instalēto ir jāizpilda sekojošās komandas no projekta <a
+href="https://github.com/ScoopInstaller/Scoop">Github lapas</a>:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> <span class="op">-</span>ExecutionPolicy RemoteSigned <span class="op">-</span>Scope CurrentUser</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Invoke-RestMethod</span> <span class="op">-</span>Uri https<span class="op">://</span>get<span class="op">.</span><span class="fu">scoop</span><span class="op">.</span><span class="fu">sh</span> <span class="op">|</span> <span class="fu">Invoke-Expression</span></span></code></pre></div></li>
+<li><p>Jāizpilda <strong>PowerShell</strong> terminālī
+<strong>bez</strong> administrātora privilēģijām:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/scoop-install.png" /></p>
+<ul>
+<li>Jāpiekrīt izpildes politikas maiņai, ievadot <code>a</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/scoop-install-a.png" /></p>
+<ul>
+<li>Nedaudz pagaidu un <strong>Scoop</strong> ir instalējies:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/scoop-install-fin.png" /></p>
+<ul>
+<li>Tagad var pamēģināt kaut-ko instalēt:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/scoop-neovim.png" /></p>
+<ul>
+<li>Redzu, ka <strong>Scoop</strong> saka, ka kā atkarību
+<strong>Neovim</strong> prasa <code>vcredist2022</code> no
+<code>extra</code> repozitorija, mēģinu to pievienot, bet tam ir
+nepiecišams <strong>Git</strong> tāpēc instalēju arī to:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/scoop-git.png" /></p>
+<ul>
+<li>Beidzot pievienoju <code>extra</code> repozitoriju un instalēju
+<code>vcredist2022</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/scoop-vcredist.png" /></p>
+<ul>
+<li>Tagad varu izmēģināt un redzu, ka <strong>Neovim</strong>
+strādā:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/nvim-first.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/nvim-hw.png" /></p>
+<ul>
+<li>Tagad instalēju pārējās nepieciešanas programmas:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/scoop-install-all.png" /></p>
+<ul>
+<li><p>Kamēr tās instalējas - īsi pastāstīšu par tām:</p>
+<ul>
+<li><strong>LibreOffice</strong> - biroja programmatūras komplekts</li>
+<li><strong>Chromium</strong> - atvērtā koda interneta pārlūks, kas
+kalpo par bāzi daudziem citiem, tostarp arī <strong>Google
+Chrome</strong>, bet bez Google integrācijām un telemetrijas.</li>
+<li><strong>Discord</strong> - komunikācijas programma
+<strong>Zoom</strong> vietā</li>
+<li><strong>mpv</strong> - minimalistisks atskaņotājs</li>
+<li><strong>GIMP</strong> - “GNU Image Manipulation Program” attēlu
+manipulācijas programma</li>
+<li><strong>Alacritty</strong> - termināļa emulātors</li>
+</ul></li>
+<li><p>Pagaidot vēl kādu laiku - viss ir instalējies:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/scoop-install-all-fin.png" /></p>
+<h3 id="tagad-var-pārbaudīt-instalētās-programmas.">Tagad var pārbaudīt
+instalētās programmas.</h3>
+<ul>
+<li><strong>LibreWolf</strong> un foršas dzeloņcūkas:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/librewolf.png" /></p>
+<ul>
+<li><strong>Chromium</strong> un foršas dzeloņcūkas:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/chromium.png" /></p>
+<ul>
+<li><strong>mpv</strong> un forša dzeloņcūka:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/mpv.png" /></p>
+<ul>
+<li><strong>Discord</strong> komunikācijai:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/discord.png" /></p>
+<ul>
+<li><strong>GIMP</strong> augstai mākslai:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/gimp.png" /></p>
+<ul>
+<li><strong>LibreOffice</strong> un nedaudz teksta:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/libreoffice-intro.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/libreoffice.png" /></p>
+<ul>
+<li>Izveidoju darbvirsmas saites instalētām programmām:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/icons.png" /></p>
+<h3
+id="vēl-gribu-instalēt-open-shell-lai-nomainītu-start-izvēlni-uz-klasisko-kādu-varēja-satikt-windows-vai-7-versijās.">Vēl
+gribu instalēt Open-Shell lai nomainītu “Start” izvēlni uz “klasisko”
+(kādu varēja satikt Windows &lt; vai = 7 versijās).</h3>
+<ul>
+<li><strong>Open-Shell</strong> instalēšu caur <strong>Scoop</strong>.
+Bet sākumā ir jāpievieno <code>nonportable</code> repozitorija, kurā
+<strong>Open-Shell</strong> arī atrodas.:</li>
+</ul>
+<blockquote>
+<p>Steam ir šeit jau instalēts jo šo daļu pievienoju vēlāk.</p>
+</blockquote>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/open-shell/scoop-bucket.png" /></p>
+<ul>
+<li>Pēc tam mēģinu instalēt <strong>Open-Shell</strong>, bet nekas
+nesanāk jo izrādās, ka to ir jāinstalē ar administratora privilēģijām.
+Atveru <strong>Alacritty</strong> no administrātora vārda, mēģinu
+vēlreiz un tagad viss sanāk:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/open-shell/scoop-install.png" /></p>
+<ul>
+<li>Varu mēģināt spiest <code>Start</code> pogu. To arī daru un redzu
+pirmās palaisšanas izvēlni. Tajā izvēlos <code>Windows 7 style</code>
+variantu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/open-shell/first-open.png" /></p>
+<ul>
+<li><code>Skin</code> sadaļā nedaudz izmaino to izskatu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/open-shell/skin.png" /></p>
+<ul>
+<li>Spiežu <code>OK</code>, aizveru programmu un apskatu rezultātu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/open-shell/fin.png" /></p>
+<blockquote>
+<p>Pirms attēla uzņemšanas arī izdzēsu daudzas nevajadzīgās ikonas.</p>
+</blockquote>
+<h3 id="tagad-uzstādīšu-programmēšanas-vidi.">Tagad uzstādīšu
+programmēšanas vidi.</h3>
+<p>Kā koda redaktoru es izmantoju <strong>Neovim</strong>, ko jau bīju
+instalējis. “no kastes” tā ir diezgan minimāla, tāpēc es izmantoju tai
+daudzus plugin-us. Lai tos instalētu - sākumā instalēju
+<strong>vim-plug</strong> un pēc tam pārkopēju savus konfigurācijas
+failus.</p>
+<ul>
+<li><p>Lai instalētu <strong>vim-plug</strong> ir jāizpilda sekojošās
+komandas no <a href="https://github.com/junegunn/vim-plug">Github
+repozitorija</a>:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">iwr</span> <span class="op">-</span>useb https<span class="op">://</span>raw<span class="op">.</span><span class="fu">githubusercontent</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>junegunn<span class="op">/</span>vim-plug<span class="op">/</span>master<span class="op">/</span>plug<span class="op">.</span><span class="fu">vim</span> <span class="op">|</span>`</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ni</span> <span class="st">&quot;</span><span class="op">$(@(</span><span class="va">$env</span><span class="op">:</span><span class="va">XDG_DATA_HOME</span><span class="op">,</span> <span class="va">$env</span><span class="op">:</span><span class="va">LOCALAPPDATA</span><span class="op">)</span><span class="st">[</span><span class="va">$null</span><span class="st"> -eq </span><span class="va">$env</span><span class="op">:</span><span class="va">XDG_DATA_HOME</span><span class="st">])/nvim-data/site/autoload/plug.vim&quot;</span> <span class="op">-</span>Force</span></code></pre></div></li>
+<li><p>Tam izmantošu svaigi instalēto
+<strong>Alacritty</strong>:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/vim-plug.png" /></p>
+<ul>
+<li>Tagad pārkopēju savus konfigurācijas failus sekojošajā direktorijā:
+<code>C:\Users\arvids_bakulis\AppData\Local\nvim</code></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/nvim-dots.png" /></p>
+<ul>
+<li>Veru vaļā <strong>Neovim</strong> un rakstu komandu
+<code>:PlugInstall</code> lai instalētu visus savus plugin-us:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/PlugInstall.png" /></p>
+<ul>
+<li>Neaizmirstu izpildīt <code>:Mason</code> lai instalētu vajadzīgos
+valodu serverus:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/mason.png" /></p>
+<ul>
+<li><p>Tagad var lietot, tikai speciālo ikonu simbolu vietā ir
+neatpazītie simboli. Tas tā ir jo nav instalēti <strong>Nerd
+Fonts</strong> fonti, kas is vajadzīgi šiem plugin-iem lai rādītu
+pareizus simbolus.</p></li>
+<li><p>Pievienoju <strong>Scoop</strong> <code>nerd-fonts</code>
+repozitoriju.</p></li>
+<li><p>Instalēt visus <strong>Nerd Fonts</strong> fontus ar
+<strong>Scoop</strong> izrādijās nav tik vienkārši, tāpēc iztikšu tikai
+ar <strong>JetBrainsMono</strong>, man tas patīk un īstenība tikai to
+arī es lietotu:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/jet-brains.png" /></p>
+<ul>
+<li><p>Tagad jāliek <strong>Alacritty</strong> lietot manu svaigi
+instalēto fontu.</p></li>
+<li><p>Lai to izdarītu - sākumā izveidoju mapi <code>alacritty</code>
+sekojošajā vietā:
+<code>C:\Users\arvids_bakulis\AppData\Roaming\alacritty</code></p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/alacritty-conf1.png" /></p>
+<ul>
+<li>Tālāk izveidoju failu jaunizveidotajā mapē ar nosaukumu
+<code>alacritty.toml</code></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/alacritty-conf2.png" /></p>
+<ul>
+<li>Un šajā failā nosaku fontu, ko lietos
+<strong>Alacritty</strong>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/alacritty-conf3.png" /></p>
+<ul>
+<li>Viss gatavs, tagad ikonas strādā!</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/neovim-fin.png" /></p>
+<ul>
+<li>Uzrkastu vienkāršu <strong>C++</strong> programmu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/cpp1.png" /></p>
+<ul>
+<li><p>Programma uzrakstīta, bet kā lai to tagad kompilē?</p></li>
+<li><p>Caur <strong>Scoop</strong> instalēju <strong>MinGW</strong>
+kompilātorus:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/mingw-install.png" /></p>
+<ul>
+<li>Tagad varu kompilēt savu programmu un skatīties kas sanāca:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/config/cpp-compile.png" /></p>
+<h2 id="spēles-instalācija-un-demonstrācija">Spēles instalācija un
+demonstrācija</h2>
+<h3
+id="izvēlējos-vienu-no-savām-mīļākajām-spēlēm---metal-gear-rising-revengeance">Izvēlējos
+vienu no savām mīļākajām spēlēm - <strong>Metal Gear Rising:
+Revengeance</strong></h3>
+<iframe width="480" height="270" src="https://www.youtube-nocookie.com/embed/RhMsboqMMzs?si=YhNL9-MLaofUYFhO&amp;start=18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<iframe width="480" height="270" src="https://www.youtube.com/embed/Of0uyPSnzp8?si=gpI80-wnQCltTSrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<ul>
+<li>Lai to instalētu no savas <strong>Steam</strong> bibliotēkas man
+vispirms ir jāinstalē <strong>Steam</strong> caur
+<strong>Scoop</strong>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/steam-install-err.png" /></p>
+<ul>
+<li>Mēģinu to izdarīt, bet izrādās, ka <strong>Steam</strong> atrodas
+<code>games</code> repozitorijā, tāpēc tas sākumā ir jāpievieno ar
+<code>scoop bucket add games</code> (ne ar pirmo reizi kā jau vienmēr
+🥲):</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/steam-install-bucket.png" /></p>
+<ul>
+<li>Tagad atkal var mēģināt instalēt <strong>Steam</strong> un šoreiz
+viss sanāk:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/steam-install-fin.png" /></p>
+<ul>
+<li>Veru <strong>Steam</strong> vaļā:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/steam-open.png" /></p>
+<ul>
+<li>Un ienāku savā kontā:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/steam-login.png" /></p>
+<ul>
+<li>Atveru izvēlēto spēli un spiežu <code>Download</code> lai to
+lejupielādētu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/mgr-wait.png" /></p>
+<ul>
+<li>Nedaudz pagaidu un spēle ir ielādējusies:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/mgr-installed.png" /></p>
+<h3
+id="jau-varu-spiest-play-lai-to-startētu-tomēr-pirms-tam-es-gribētu-tomēr-instalēt-pilno-grafisko-dravieru-un-to-palīgprogrammatūtas-komplektu-nevis-tikai-minimālo-ko-windows-pats-ir-instalējis.">Jau
+varu spiest <code>Play</code> lai to startētu, tomēr pirms tam es
+gribētu tomēr instalēt pilno grafisko dravieru un to palīgprogrammatūtas
+komplektu, nevis tikai minimālo ko Windows pats ir instalējis.</h3>
+<ul>
+<li>Atveru video kartes ražotāja mājas lapu un sadaļā
+<code>Drivers</code> izvēlos savu karti (<strong>RX
+6700XT</strong>):</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/driver/amd-web.png" /></p>
+<ul>
+<li>Lejupielādēju to, nedaudz pagaidu un instalētājs atveras:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/driver/amd-install1.png" /></p>
+<ul>
+<li>Izvēlos standarta instalāciju, tikai atsakos no telemetrijas un datu
+vākšanas:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/driver/amd-install2.png" /></p>
+<ul>
+<li>Vēl nedaudz pagaidu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/driver/amd-install3.png" /></p>
+<ul>
+<li>Un instalēcija ir beigusies, vār pārstartēt virtuālo mašīnu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/driver/amd-install-fin.png" /></p>
+<ul>
+<li>Pēc pārstartēšanas redzu, ka viss ir instalējies un strādā:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/driver/amd-fin.png" /></p>
+<h3 id="tagad-varu-atgriezties-pie-spēles.">Tagad varu atgriezties pie
+spēles.</h3>
+<ul>
+<li><p>Startēju to, nokliksķinot divas reizes uz tās ikonu uz
+darbvirsmas.</p></li>
+<li><p>Bet nekas nenotiek…</p></li>
+<li><p>Internetā izlasu un arī pašam rodas aizdomas ka šāda problēma var
+būt sasitīta ar trūkstošiem <strong>DirectX</strong> failiem.</p></li>
+<li><p>Lai to risinātu es atveru <a
+href="https://www.techpowerup.com/download/directx-redistributable-runtime/">TechPowerUp
+mājaslapu</a> un lejupielādēju <strong>DirectX</strong> kumulatīvo
+bezsaistes instalētāju:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/directx/web.png" /></p>
+<ul>
+<li>Dearhivēju to nokliksķinot ar labo peles pogu, izvēloties
+<code>Extract All...</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/directx/unzip.png" /></p>
+<ul>
+<li><strong>SmartScreen</strong> atkal uzvedas. Ar to tieku galā kā jau
+iepriekš - spiežot <code>Run anyway</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/directx/not-so-smart.png" /></p>
+<ul>
+<li>Jaunizveidotajā mapē ir dearhivētiem failiem atrodu
+<code># install.bat</code> un palaižu to:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/directx/bat.png" /></p>
+<ul>
+<li>Nedaudz pagaidu kamēr programma beidz savu darbu un var vēlreiz
+mēģināt palaist spēli. Tagad redzu, ka viss strādā:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/ingame/konami.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/ingame/anykey.png" /></p>
+<ul>
+<li>Izvēlos <code>New Game</code> un nedaudz paskraidu apkārt lai
+parādīt, ka spēle funkcionē:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/ingame/newgame.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/ingame/gameplay1.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/ingame/gameplay2.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/ingame/gameplay3.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/ingame/gameplay4.png" /></p>
+<ul>
+<li>Var redzēt ka spēlē nekā nav instalēta <code>Program Files</code>
+mapē:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/game/location.png" /></p>
+<h2 id="punkti-no-darba-nosacījuma">Punkti no darba nosacījuma</h2>
+<h3 id="instalēju-visus-atjauninājumus">Instalēju visus
+atjauninājumus:</h3>
+<h4 id="no-windows-update">no <strong>Windows Update</strong>:</h4>
+<ul>
+<li>Atveru <strong>Windows Update</strong> un redzu, ka atjaunīnājums ir
+jau lejupielādējies un sācis instalēties automātiski, tagad ir
+nepiecišams restartēt sistēmu. To arī daru:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/upd/update1.png" /></p>
+<ul>
+<li>Pēc restartēšanas spiežu <code>Check for updates</code> atkal un
+redzu, vēl ir palikuši neinstalēti atjuninājumi:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/upd/update2.png" /></p>
+<ul>
+<li>Nedaudz pagaidu, tie arī instalējas, vēlreiz piespiežu
+<code>Check for updates</code> un tagad redzu, ka viss ir kārtībā un
+visi atajuninājumi ir instalēti:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/upd/update3.png" /></p>
+<h4 id="no-scoop">no <strong>Scoop</strong>:</h4>
+<ul>
+<li>Instalalēju atjaninājumus priekš paša <strong>Scoop</strong> ar
+<code>scoop update</code>,</li>
+<li>instalēju atjauninājumus priekš visā <strong>Scoop</strong>
+instalētām programmām ar <code>scoop update *</code>,</li>
+<li>pārbaudu rezultātu ar <code>scoop status</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/upd/update-scoop.png" /></p>
+<h3 id="demonstrēju-processu-un-servisu-sarakstu">Demonstrēju processu
+un servisu sarakstu:</h3>
+<h4 id="processi">Processi:</h4>
+<ul>
+<li>Atveru <strong>Task Manager</strong> un izvēlos <code>Details</code>
+sadaļu, lai redzētu pilnu processu sarakstu:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/tasks/tasks1.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/tasks/tasks2.png" /></p>
+<h4 id="servisi">Servisi:</h4>
+<ul>
+<li>Atveru <code>Services</code> sadaļu, un parādu visus
+<strong>aktīvos</strong> servisus:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/tasks/services1.png" />
+<img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/tasks/services2.png" /></p>
+<h3 id="palaižu-diska-defragmentāciju">Palaižu diska
+defragmentāciju:</h3>
+<ul>
+<li>Atveru <code>Optimize Drives</code>, spiežu <code>Optimize</code>,
+nedaudz pagaidu un ir gatavs:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/defrag.png" /></p>
+<h3
+id="parādu-device-manager-un-to-ka-visi-draiveri-ir-instalēti">Parādu
+“Device Manager” un to, ka visi draiveri ir instalēti:</h3>
+<ul>
+<li>Nav dzeltenu trijstūrīšu - viss kārtībā:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/devices.png" /></p>
+<h3
+id="pievienoju-latviešu-un-krievu-valodas-un-uzrakstu-tekstus-visās-3-valodās">Pievienoju
+Latviešu un Krievu valodas un uzrakstu tekstus visās 3 valodās:</h3>
+<ul>
+<li>Atveru iestatījumu valodas sadaļu un spiežu
+<code>Add a new language</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/lang/lang-init.png" /></p>
+<ul>
+<li>Izvēlnē izvēlos <code>Latviešu</code> un pievienoju to:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/lang/lang-lv2.png" /></p>
+<ul>
+<li>Un izvēlos <code>Русский</code> un pievienoju to:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/lang/lang-ru2.png" /></p>
+<ul>
+<li>Nedaudz pagaidu kamēr viss instalēsies… Un ir gatavs:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/lang/lang-wait.png" /></p>
+<ul>
+<li>Tagad varu uzrakstīt teikumus visās 3 valodās 😎:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/lang/lang-test.png" /></p>
+<h3 id="konfigurēju-pagefile">Konfigurēju Pagefile:</h3>
+<ul>
+<li>Atveru <code>System Properties</code>, pāreju <code>Advanced</code>
+sadaļā un pie <code>Performace</code> spiežu
+<code>Settings...</code></li>
+<li>Atvērtajā logā pie <code>Virtual memory</code> spiežu
+<code>Change...</code></li>
+<li>Un jau šajā logā:
+<ul>
+<li>Noņemu ķeksīti no
+<code>Automatically manage paging file size for all drives</code></li>
+<li>Apakšā izvēlos <code>Custom size</code> un nosaku limitus no
+<code>2048MB</code> līdz <code>8192MB</code> (no <code>2GB</code> līdz
+<code>8GB</code>):</li>
+</ul></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/pagefile/pagefile-fin.png" /></p>
+<h3 id="palaižu-windows-safe-mode-režīmā">Palaižu Windows Safe mode
+režīmā:</h3>
+<ul>
+<li><p>Šim punktam, lai varētu vieglāk uzņemt ekrāna attēlus, atvienoju
+virtuālai mašīnai fizisko karti un izmantošu grafikas
+emulāciju.</p></li>
+<li><p>Startējot mašīnu, pat neieejot savā lietotājā, turot
+<code>SHIFT</code> pogu, piespiežu “Strāvas” pogu un izvēlos
+<code>Restart</code>, neatlaižot <code>SHIFT</code>:</p></li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/safemode/safemode-init.png" /></p>
+<ul>
+<li>Atveras logs, kur izvēlos <code>Troubleshoot</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/safemode/safemode-troubleshoot.png" /></p>
+<ul>
+<li>Šajā logā izvēlos <code>Advanced options</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/safemode/safemode-advanced.png" /></p>
+<ul>
+<li>Tagad <code>Start-up Settings</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/safemode/safemode-startup-settings.png" /></p>
+<ul>
+<li>Un <code>Restart</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/safemode/safemode-restart.png" /></p>
+<ul>
+<li>Nedaudz pagaidu un sistēma ir startējusi <strong>Advanced Boot
+Options</strong> izvēlnē. Izvēlos <code>Safe Mode</code>:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/safemode/safemode.png" /></p>
+<ul>
+<li>Vēl nedaudz pagaidu un Windows ir startējis <strong>Safe
+Mode</strong> režīmā:</li>
+</ul>
+<p><img
+src="https://raw.githubusercontent.com/kl3fry/os-hw-win/refs/heads/main/img/guest/misc/safemode/safemode-fin.png" /></p>
+<h1 id="paldies-par-uzmanību">Paldies par uzmanību!</h1>
+<blockquote>
+<p>P.S. Ļoti atvainojos par tik vēlu iesūtīšanu.</p>
+</blockquote>
+</body>
+</html>
