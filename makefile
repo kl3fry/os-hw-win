@@ -1,3 +1,2 @@
 all:
-	# generates a header too, undesirable...
-	pandoc -o win.html README.md --css="style.css" --metadata title="Windows 10 Instalācija" -s
+	pandoc -o win.html README.md -s --template="template.html"
